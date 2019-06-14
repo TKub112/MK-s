@@ -1,0 +1,9 @@
+true
+false
+menuspeech
+exit
+wordsmode
+sentencesmode
+lettersmode
+learningmode
+help
