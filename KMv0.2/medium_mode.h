@@ -74,6 +74,7 @@ void medium_mode(sf::RenderWindow& okno, int x, int y)
 	tekst_lives.setStyle(sf::Text::Bold);
 	tekst_lives.setPosition(x / 3 * 3, y / 20);
 
+	timer time;
 	while (okno.isOpen())//petla glowna
 	{
 		random = words.random();
@@ -111,6 +112,7 @@ void medium_mode(sf::RenderWindow& okno, int x, int y)
 							lives--;
 							if (lives == 0) break;
 						}
+						
 					}
 
 				}
@@ -126,6 +128,12 @@ void medium_mode(sf::RenderWindow& okno, int x, int y)
 				okno.draw(tekst_typed);
 				okno.draw(tekst_lives);
 				okno.display();//wyswietalnie tekstu
+
+				if (i == random.length()-1 ) //dzwiek gdy etap zostanie ukonczony opcjonalnie zeby nie opozniac programu daj krotszy dzwiek
+				{
+					intro_sounds.play("stagecompleted");
+				
+				}
 			}
 			if (lives == 0) break;
 		}

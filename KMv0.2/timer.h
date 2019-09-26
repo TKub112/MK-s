@@ -24,6 +24,18 @@ public:
 	{
 		timer.restart();
 	}
+	void freezer_program(float delay)
+	{
+		timer.restart();
+		while(1)
+		{
+			time = timer.getElapsedTime();
+			if (time.asSeconds() > delay)
+			{
+				break;
+			}
+		}
+	}
 
 
 

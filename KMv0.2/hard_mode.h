@@ -67,6 +67,8 @@ void hard_mode(sf::RenderWindow& okno, int x, int y)
 	tekst_lives.setStyle(sf::Text::Bold);
 	tekst_lives.setPosition(x / 4 * 3, y / 20);
 
+	timer time;
+
 	while (okno.isOpen())//petla glowna
 	{
 		random = sentences.random();
@@ -125,6 +127,12 @@ void hard_mode(sf::RenderWindow& okno, int x, int y)
 				okno.draw(tekst_typed);
 				okno.draw(tekst_lives);
 				okno.display();//wyswietalnie tekstu
+				if (i == random.length() - 1) //dzwiek gdy etap zostanie ukonczony opcjonalnie zeby nie opozniac programu daj krotszy dzwiek
+				{
+					intro_sounds.play("stagecompleted");
+					//time.freezer_program(1.50); kiepsko dziala dlaczego?
+				}
+
 			}
 			if (lives == 0) break;
 		}
