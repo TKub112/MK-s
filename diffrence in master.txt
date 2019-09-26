@@ -1,0 +1,3 @@
+freezer function in timer
+dodanie dzwieku stage completed oraz dodanie go na koniec zdania
+opoznienie pojawienia sie slowa
